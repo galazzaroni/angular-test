@@ -1,0 +1,21 @@
+
+<div class="container">
+    <h2>Tracking the global coronavirus outbreak</h2>
+  <div class="row">
+    <div *ngFor="let g of global | keyvalue" class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{ g.key | space }}</h3>
+          <p class="card-text" [ngClass]="{'recovered': g.key === 'TotalRecovered'}">{{ g.value | number }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h2>Reported Cases and Deaths by Country</h2>
+  <ng2-smart-table [settings]="settings" [source]="countries"></ng2-smart-table>
+
+
+
+</div>

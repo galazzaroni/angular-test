@@ -1,0 +1,21 @@
+nav {
+    margin: 10px;
+    background-color: #633a4b;
+}
+
+nav a {
+    color: #fff;
+    ;
+}
+
+footer {
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+#sticky-footer {
+    flex-shrink: 0;
+    /*margin: 10px;*/
+}
