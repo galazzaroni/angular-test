@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mapbox: {
+      accessToken: 'pk.eyJ1IjoiZ2FsYXp6YXJvbmkiLCJhIjoiY2tna2U2dzRuMDF3dTMwcGE0b3Z2d2s4cCJ9.zYasHFTZmC9uLDvK0QaSwQ', // Optionnal, can also be set per map (accessToken input of mgl-map)
+      geocoderAccessToken: 'pk.eyJ1IjoiZ2FsYXp6YXJvbmkiLCJhIjoiY2tna2U2dzRuMDF3dTMwcGE0b3Z2d2s4cCJ9.zYasHFTZmC9uLDvK0QaSwQ' // Optional, specify if different from the map access token, can also be set per mgl-geocoder (accessToken input of mgl-geocoder)
+    
+  }
 };
 
 /*

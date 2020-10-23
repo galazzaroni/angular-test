@@ -20,7 +20,7 @@ export class CovidService {
     return this.http.get(this.url+'summary', this.httpOptions);
   }
 
-  public getByCountry(): Observable<any> {
-    return this.http.get(this.url+'country/Argentina', this.httpOptions);
+  public getByCountry(country): Observable<any> {
+    return this.http.get(this.url+'country/'+country, this.httpOptions);
   }
 }

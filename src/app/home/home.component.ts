@@ -1,6 +1,6 @@
 import { SpacePipe } from './../space.pipe';
-import { Component, OnInit } from '@angular/core';
-import { CovidService } from './../shared/covid.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CovidService } from '../services/covid.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DatePipe } from '@angular/common';
 
@@ -13,7 +13,7 @@ import { DatePipe } from '@angular/common';
   ]
 })
 export class HomeComponent implements OnInit {
-
+  //@Output() country = new EventEmitter();
   global: { [key:string]:string};
   countries:any = [];
   data = [];
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
                   filter: false,
                   type: 'html',
                   valuePrepareFunction: (country) => {
-                    return  '<a onclick="onCustom($event)" href="/countries/' + country + '"><strong>' + country + '</strong></a>'; 
+                    return  '<a onclick="onCustom($event)" href="/country/' + country + '"><strong>' + country + '</strong></a>'; 
                   }
                 },
       //CountryCode: { title: 'Code' },
@@ -75,6 +75,11 @@ export class HomeComponent implements OnInit {
 
   getData() {
     return Object.assign([], this.data);
+  }
+
+  sendCountry(event) {
+    console.log(event);
+    console.log('asd');
   }
 
 }

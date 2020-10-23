@@ -1,1 +1,24 @@
-<p>country works!</p>
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">All Dates</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">By Date</a>
+        </li>
+    </ul>
+
+    <ng2-smart-table [settings]="settings" [source]="country"></ng2-smart-table>
+
+    <div style = "display: block; width: 100%;">
+        <canvas *ngIf = "loaded"
+            baseChart
+            [chartType]="'line'"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartClick)="onChartClick($event)">
+        </canvas>
+      </div>
+</div>
